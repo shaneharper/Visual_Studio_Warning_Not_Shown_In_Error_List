@@ -2,8 +2,11 @@
 {
     internal class Program
     {
+        static string? Fn() => null;
+
         static void Main()
         {
+            _ = Fn().Length;
         }
     }
 }
