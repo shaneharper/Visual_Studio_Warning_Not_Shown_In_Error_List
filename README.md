@@ -1,3 +1,12 @@
-This demonstrates that the items displayed in Visual Studio's Error List window when "Build + IntelliSense" is selected are not always the union of the items displayed when "Build" is selected and the items displayed when "IntelliSense" is selected. This project might demonstrate a bug in Visual Studio v17.5.4.
+## Error List: "Build + IntelliSense" pane does not contain an error shown in the "Build" pane.
 
-A CS8602 warning ("Dereference of a possibly null reference.") only appears in the Error List when "Build" is selected but not when "Build + IntelliSense" is selected if Program.cs was open in a Visual Studio editor window at the time it was compiled. (Though if Program.cs wasn't open in an editor window when it was compiled then the CS8602 warning does appear when "Build + IntelliSense" is selected. To see this use "Build/Rebuild Solution" if necessary to force recompilation of Program.cs.)
+The following steps demonstrate a problem with Visual Studio v17.10.5.
+
+* Open the `.sln` file.
+* Open `Program.cs`.<br />
+    (The problem doesn't occur if Program.cs isn't open in a Visual Studio editor window before it's compiled.)
+* Build the solution.<br />
+    The following warning will be displayed in the Output window:<br />
+        ... `Program.cs(9,17,9,21): warning CS8602: Dereference of a possibly null reference.`
+* Check Error List; **The CS8602 warning appears in the "Build" pane" but the warning does not appear in the "Build + IntelliSense" pane!**<br />
+    _(If the warning didn't appear in the "Build" pane then select another pane and then go back to the "Build" pane - That problem was reported here: https://developercommunity.visualstudio.com/t/Build-error-missing-from-Error-List/10705983.)_
