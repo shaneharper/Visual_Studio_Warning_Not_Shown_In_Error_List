@@ -1,6 +1,6 @@
 ## Error List: "Build + IntelliSense" pane does not contain an error shown in the "Build" pane.
 
-The following steps demonstrate a problem with Visual Studio v17.10.5.
+The following steps demonstrate a problem with Visual Studio v18.1.1.
 
 * Open the `.sln` file.
 * Open `Program.cs`.<br />
